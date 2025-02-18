@@ -1,0 +1,1 @@
+git commit -m "commit kedua: menambahkan motivasi <nama_kalian>git add .motivasi : "ingin bisa jadi web dev full stack sehingga bisa kerja mobile sambil usaha"
