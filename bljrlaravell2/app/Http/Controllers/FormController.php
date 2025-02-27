@@ -15,6 +15,11 @@ class FormController extends Controller
         $firstname = $request->input('firstname');
         $lastname = $request->input('lastname');
         $bio = $request->input('bio');
+        $gender = $request->input('gender');
+        $negara = $request->input('negara');
+        $bahasa = $request->input('bahasa');
+
+
 
         return view('page.home', ['firstname' => $firstname, 'lastname' => $lastname, "bio" => $bio]);
     }
