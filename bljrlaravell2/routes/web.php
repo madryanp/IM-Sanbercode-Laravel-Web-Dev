@@ -10,3 +10,7 @@ Route::get('/', [DashboardController::class, 'dashboard']);
 Route::get('/register', [FormController::class, 'daftar'] );
 
 Route::post('/home', [FormController::class, 'home'] );
+
+Route::get('/master', function(){
+    return view ('layout.master');
+});
