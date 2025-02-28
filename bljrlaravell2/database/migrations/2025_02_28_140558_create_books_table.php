@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('baju', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('namabaju');
-            $table->integer('size');
-            $table->integer('harga');
-            $table->unsignedBigInteger('model_id');
+            $table->string('title');
+            $table->text('summary');
+            $table->string('image');
+            $table->integer('stok');
 
-            $table->foreign('model_id')->references('id')->on('models');
+            $table->unsignedBigInteger('genre_id');
+
+            $table->foreign('genre_id')->references('id')->on('genres');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('baju');
+        Schema::dropIfExists('books');
     }
 };
