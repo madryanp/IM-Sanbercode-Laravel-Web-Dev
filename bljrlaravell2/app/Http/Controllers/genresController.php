@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Genres;
 
 class genresController extends Controller
 {
@@ -50,7 +51,7 @@ class genresController extends Controller
 
     public function show($id)
     {
-        $genres = DB::table('genres')->find($id);
+        $genres = Genres::find($id);
 
         //dd($genres);
 

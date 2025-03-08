@@ -4,7 +4,13 @@
 @endsection
 
 @section('content')
+
+@auth
+
+@if (Auth()->user()->role === 'admin')
 <a href="/genres/create" class="btn btn-primary my-3">Tambah</a>
+@endif
+@endauth
 
 <table class="table">
   <thead>
@@ -27,8 +33,12 @@
                     @csrf
                     @method('DELETE')
                     <a href="/genres/{{$item->id}}" class="btn btn-info btn-sm">Detail</a>
+                    @auth
+                    @if (Auth()->user()->role === 'admin')
                     <a href="/genres/{{$item->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                    @endif
+                    @endauth
                 </form>
             </td>
      
